@@ -19,7 +19,7 @@ URL = f"https://drive.google.com/uc?id={FILE_ID}"
 @st.cache_resource
 def load_model(path):
     """Loads a TensorFlow/Keras model from local path"""
-    return tf.keras.models.load_model(path, compile=False)
+    return tf.keras.models.load_model(path, compile=False,safe_mode=False)
 
 # Check if model exists
 if os.path.exists(MODEL_PATH):
@@ -253,3 +253,4 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
+
